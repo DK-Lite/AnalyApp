@@ -3,10 +3,13 @@ import './App.css';
 
 import { Table } from 'components/atoms/Table'
 import { Card } from 'components/atoms/Card'
+import { MainPage } from 'pages/Dashboard'
 
 function App() {
   return (
     <div className="App">
+
+      <MainPage></MainPage>
       {/* <div>
       <Table 
           colums={[
@@ -17,7 +20,7 @@ function App() {
               {age: '19', name: 'kdk' },
               {age: '18', name: 'ddk' },
           ]}></Table>
-      </div> */}
+      </div> 
       
       <div style={
         {
@@ -34,7 +37,9 @@ function App() {
       <Card width='500px' height='300px' margin='10px 10px 10px 10px'></Card>
       <Card width='500px' height='300px' margin='10px 10px 10px 10px'></Card>
       </div>
+       */}
     </div>
+   
   );
 }
 
