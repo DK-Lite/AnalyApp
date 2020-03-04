@@ -1,4 +1,4 @@
-import MyButton from './MyButton'
+import Button from './Button'
 export {
-	MyButton,
+	Button,
 }

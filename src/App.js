@@ -1,25 +1,32 @@
 import React from 'react';
 import './App.css';
+import styled from 'styled-components'
 
-import { Table } from 'components/atoms/Table'
-import { Card } from 'components/atoms/Card'
-import { MainPage } from 'pages/Dashboard'
+
+import { Map } from 'components/atoms'
+import { CardTable, CardChart } from 'components/molecules'
+
+const Container = styled.div`
+    display: flex;
+    margin: 10px 10px 10px 10px;
+`
+
 
 function App() {
   return (
     <div className="App">
+      <Container><Map/></Container>
+      
+      <Container>
+        <CardTable/>
+      </Container>
 
-      <MainPage></MainPage>
+      <Container>
+       <CardChart/>
+      </Container>
+      
       {/* <div>
-      <Table 
-          colums={[
-              {name: 'Date', tag : 'name'},
-              {name: 'Value', tag : 'name'},
-          ]}
-          datas={[
-              {age: '19', name: 'kdk' },
-              {age: '18', name: 'ddk' },
-          ]}></Table>
+      
       </div> 
       
       <div style={

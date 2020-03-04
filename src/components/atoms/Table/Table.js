@@ -2,21 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 
 const CustomDiv = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
     float: left;
 `
 const StyledTable = styled.table`
-    border: 0.5px solid #6663;
+    width: 390px;
+    height: 100%;
 `
 const Tr = styled.tr`
-    border: 0.5px solid #6663;
+
 `
 const Td = styled.td`
-    border: 0.5px solid #6663;
+    border: 0.05px solid #6663;
 `
 const Th = styled.th`
-    border: 0.5px solid #6663; 
     height: 25px;
-    border: 0.5px solid;
     border-radius: 3px;
     background: #5459FF; 
     color: white;
