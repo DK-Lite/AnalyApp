@@ -1,6 +1,8 @@
 import { CardTable } from './CardTable'
-import { CardChart } from './CardChart'
+import { LineChart, BarChart, PieChart } from './CardChart'
 export {
     CardTable,
-    CardChart,
+    LineChart,
+    BarChart,
+    PieChart,
 }

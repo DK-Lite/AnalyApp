@@ -1,5 +1,5 @@
-import LineGraph from './LineGraph'
+import ChartTemplate from './Chart'
 
 export {
-    LineGraph,
+    ChartTemplate,
 }
