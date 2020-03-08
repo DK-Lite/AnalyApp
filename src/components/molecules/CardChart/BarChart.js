@@ -37,7 +37,7 @@ const Contents = styled.div`
 `
 
 
-function BarChart(props) {
+function CardChart(props) {
 
     const { width, height, ...other } = props;
 
@@ -88,4 +88,4 @@ function BarChart(props) {
 
 };
 
-export default BarChart;
+export default CardChart;

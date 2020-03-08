@@ -37,7 +37,7 @@ const Contents = styled.div`
 `
 
 
-function LineChart(props) {
+function CardChart(props) {
 
     const { width, height, ...other } = props;
 
@@ -48,7 +48,7 @@ function LineChart(props) {
                 height: height,
                 ...other
             }}>
-            <Title>실거래 추세</Title>
+            <Title>실시간 차트</Title>
 
             <Contents>
                 <ChartTemplate
@@ -88,4 +88,4 @@ function LineChart(props) {
 
 };
 
-export default LineChart;
+export default CardChart;

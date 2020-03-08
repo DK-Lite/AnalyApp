@@ -4,10 +4,11 @@ import styled from 'styled-components'
 declare var kakao:any;
 
 const CustomMap = styled.div`
-    width: 900px;
-    height: 900px;
+    width: 1280px;
+    height: 720px;
     border: 0px dotted;
     border-radius: 15px;
+    margin: 40px 0px 0px 0px;
     z-index: 0;
 `
 

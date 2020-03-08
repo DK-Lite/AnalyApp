@@ -1,33 +1,27 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components'
 
 import { CardTable, BarChart, LineChart, PieChart } from 'components/molecules'
 
 const Container = styled.div`
-    width: 100%;
+    width: 700px;
     height: 100%;
     background: #FFFFFF;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: flex-start;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     padding: 0px 10px 0px 10px;
 `
 const Item = styled.div`
     display: flex;
-    margin: 0px 10px 10px 0px;
+    margin: 0px 0px 10px 0px;
 `
-function TradeDataArea(){
+function AnalyArea(){
 
     return(
         <Container>
-            <Item>
-                <CardTable/>
-            </Item>
-            <Item>
-                <LineChart/>
-            </Item>
             <Item>
                 <BarChart/>
             </Item>
@@ -38,4 +32,4 @@ function TradeDataArea(){
     )
 }
 
-export default TradeDataArea;
+export default AnalyArea;
