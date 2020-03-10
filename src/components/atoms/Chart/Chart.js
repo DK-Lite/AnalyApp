@@ -3,18 +3,20 @@ import Chart from 'chart.js'
 
 function ChartTemplate({type, data, options, style}) {
     const chartContainer = useRef();
-    const [chartInstance, setChartInstance] = useState(null);
+    const [, setChartInstance] = useState(null);
     const paramter = {
         type: type,
         data: data,
         options: options
     }
-    useEffect(()=>{
+
+    function InitChart(){
         if(chartContainer && chartContainer.current) {
             const newChartInstance = new Chart(chartContainer.current, paramter);
             setChartInstance(newChartInstance);
         }
-    },[chartContainer]);
+    }
+    useEffect(InitChart, [chartContainer]);
     
     return (
         <div>

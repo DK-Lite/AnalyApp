@@ -28,19 +28,19 @@ const Th = styled.th`
 function Table(props){
     const { colums, datas } = props;
 
-    const header_line = colums.map( object => (
-            <Th >{object.name}</Th>
+    const header_line = colums.map( (object, index) => (
+            <Th key={index}>{object.name}</Th>
     ))
-    const data_lines = datas.map( data => 
-        <Tr>
-            {colums.map( object =>  (<Td> {data[object.tag]}</Td>)) }
+    const data_lines = datas.map( (data, index) => 
+        <Tr key={index}>
+            {colums.map( (object, i) =>  (<Td key={i}> {data[object.tag]}</Td>)) }
         </Tr>
     )
 
     return (
         <CustomDiv> 
             <StyledTable>
-                <Tr>
+                <Tr key={0}>
                     {header_line}
                 </Tr>
                 {data_lines}

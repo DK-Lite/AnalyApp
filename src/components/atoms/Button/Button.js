@@ -3,7 +3,7 @@ import { connect } from 'react-redux'; //Redux Main
 import { actions as templateActions } from 'ducks/Template'; //Redux Actions
 
 function Button(props){
-    const { title } = props; // State
+    //const { title } = props; // State
     const { ActionExample } = props;
     const handleClick = () =>{ ActionExample("str"); }
     return (

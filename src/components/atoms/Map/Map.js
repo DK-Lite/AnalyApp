@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components'
+
+// Redux
+import { connect } from 'react-redux';
+import { actions as mapActions } from 'ducks/Map';
 
 declare var kakao:any;
 
@@ -13,19 +17,16 @@ const CustomMap = styled.div`
 `
 
 function Map(props){
-    const { data } = props // state
-    const { setData } = props // actions
-
-    const [tmp, setTmp] = useState([]);
-    const [kakaoMap, setkakaoMap] = useState();
-    const [dataList, setdataList] = useState([]);
+    const { apartInfos } = props
+    const { loadAptInfos, updateAptName } = props // actions
     
+    useEffect(loadAptInfos,[])
+    useEffect(CreateMap,[apartInfos])
 
-
-    useEffect(()=>{
+    function CreateMap(){
         const el = document.getElementById('map');
         
-        const positions = tmp.map( data => ({ 
+        const positions = apartInfos.map( data => ({ 
             title: data.apt_name,
             latlng: new kakao.maps.LatLng(data.latitudes, data.longitude),
             road_city_code: data.road_city_code,
@@ -38,13 +39,13 @@ function Map(props){
         // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
     
-        var kamap = new kakao.maps.Map(el, {
+        var kakaoMap = new kakao.maps.Map(el, {
             center: new kakao.maps.LatLng(37.563642596447494, 127.0260017409586),
         });
     
         for(var i = 0; i < positions.length; i ++) {
             var marker = new kakao.maps.Marker({
-                map: kamap, // 마커를 표시할 지도
+                map: kakaoMap, // 마커를 표시할 지도
                 position: positions[i].latlng,
                 title : positions[i].title,
                 image : markerImage,  
@@ -56,19 +57,25 @@ function Map(props){
                 road_code : positions[i].road_code,
             });
 
+            // marker click event
+            (function(marker, uniqueKey) {
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    updateAptName(uniqueKey)
+                });
+            })(marker, uniqueKey);
         }
-        setkakaoMap(kamap)
+    }
 
-    },[tmp])
 
     return (
-        <React.Fragment>
             <CustomMap className='Map' id="map" />
-        </React.Fragment>
     )
 
 }
 
 
-export default Map;
+export default connect(
+    state => state.map,
+    mapActions
+)(Map);
 //export default Map;

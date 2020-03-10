@@ -1,5 +1,6 @@
 import { all, fork } from 'redux-saga/effects'
 import { sagas as templateSaga } from './Template'
+import { sagas as mapSaga } from './Map'
 
 
 function combineSagas(...sagas) {
@@ -14,4 +15,5 @@ function combineSagas(...sagas) {
 
 export default combineSagas(
     templateSaga,
+    mapSaga,
 )
