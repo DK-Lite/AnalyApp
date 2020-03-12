@@ -48,34 +48,51 @@ function CardChart(props) {
                 height: height,
                 ...other
             }}>
-            <Title>실시간 차트</Title>
-
+            <Title>실거래 차트</Title>
+            {/*  datalist.labels
+            datalist.meanPrices*/}
             <Contents>
                 <ChartTemplate
                     type='line'
                     data={{
-                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                        datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
+                        labels: ["2019-11", "2019-12", "2020-01"],
+                        datasets: [
+                        {
+                            label: "86.3m",
+                            data: [82500, 90000, 100000],
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 99, 132, 0)',
                             ],
                             borderColor: [
                                 'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
                             ],
-                            borderWidth: 1
-                        }]
+                            borderWidth: 3
+                        },
+
+                        {
+                            label: "59.3m",
+                            data: [52310, 60000, 70002],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0)',
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                            ],
+                            borderWidth: 3
+                        },
+
+                        {
+                            label: "30.3m",
+                            data: [32520, 43323, 60323],
+                            backgroundColor: [
+                                'rgba(255, 255, 86, 0)',
+                            ],
+                            borderColor: [
+                                'rgba(255, 206, 86, 1)',
+                            ],
+                            borderWidth: 3
+                        },
+                    ]
                     }}
                     style={
                         { width:'380px', height:'100%'}

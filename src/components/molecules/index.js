@@ -1,7 +1,7 @@
-import { CardTable } from './CardTable'
+import { CardTable, CardTradeTable } from './CardTable'
 import { LineChart, BarChart, PieChart } from './CardChart'
 export {
-    CardTable,
+    CardTable, CardTradeTable,
     LineChart,
     BarChart,
     PieChart,

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { CardTable, BarChart, LineChart, PieChart } from 'components/molecules'
+import { CardTradeTable, BarChart, LineChart, PieChart } from 'components/molecules'
 
 const Container = styled.div`
     width: 100%;
@@ -23,7 +23,7 @@ function TradeDataArea(){
     return(
         <Container>
             <Item>
-                <CardTable/>
+                <CardTradeTable/>
             </Item>
             <Item>
                 <LineChart/>
