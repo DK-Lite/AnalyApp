@@ -4,25 +4,27 @@ import styled from 'styled-components'
 const Container = styled.button`
     outline: none;
     text-align: center;
-    color: #7ED2FF;
+    color: black;
     background: white;
-    border: 1px solid #7ED2FF;
-    border-radius: 10px;
-
+    border: 1px solid #0000;
+    border-right: 1px solid #0003;
+    
     font-size: 20px;
     font-family: 'Poppins-Regular';
 
     &:hover {
         opacity: 0.5;
+        border-left: 1px soild #0003;
     }
     &:active {
         color: white;
-        background: #7ED2FF;
-        border: 1px solid white;
+        opacity: 1;
+        border-left: 3px solid gray;
+        border-right: 1px solid #FFFFFF;
     }
 `
 
-function Button({ children, ...other }){
+function TabButton({ children, ...other }){
     return (
         <Container {...other}>
             {children}
@@ -30,4 +32,4 @@ function Button({ children, ...other }){
     )
 }
 
-export default Button
+export default TabButton

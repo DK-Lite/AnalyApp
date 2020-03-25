@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-//import { LineGraph } from '../Chart'
-
 
 const StyledCard = styled.div`
-    border: 0.5px solid #6663;
-    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
     &:hover {
-        box-shadow: 2px 2px 3px 1px gray;
+        box-shadow: 0px 0px 5px 1px gray;
     }
     background: #FFFFFF;
     display: flex;
@@ -15,27 +14,15 @@ const StyledCard = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-    
 `
 
-
-function Card(props){
-    const { width, height, ...other } = props;
+function Card({ children, ...other }){
 
     return(
-        <StyledCard
-            style= {{
-                width: width,
-                height: height,
-                ...other
-            }} 
-        >
-            <dib> Title </dib>
-            
+        <StyledCard {...other}>
+            {children}
         </StyledCard>
     )
-    
-
 }
 
 export default Card;

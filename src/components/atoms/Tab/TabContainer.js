@@ -22,7 +22,7 @@ const Container = styled.button`
     }
 `
 
-function Button({ children, ...other }){
+function TabContainer({ children, ...other }){
     return (
         <Container {...other}>
             {children}
@@ -30,4 +30,4 @@ function Button({ children, ...other }){
     )
 }
 
-export default Button
+export default TabContainer;
