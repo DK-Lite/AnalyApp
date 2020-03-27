@@ -4,11 +4,9 @@ import styled from 'styled-components'
 import { CardTradeTable, BarChart, LineChart, PieChart } from 'components/molecules'
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
-    background: #FFFFFF;
     display: flex;
-    justify-content: center;
+    width: 100%
+    justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -25,7 +23,7 @@ function TradeDataArea(){
             <Item>
                 <CardTradeTable/>
             </Item>
-            <Item>
+            {/* <Item>
                 <LineChart/>
             </Item>
             <Item>
@@ -33,7 +31,7 @@ function TradeDataArea(){
             </Item>
             <Item>
                 <PieChart/>
-            </Item>
+            </Item> */}
         </Container>
     )
 }

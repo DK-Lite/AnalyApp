@@ -4,11 +4,14 @@ import { ChartTemplate } from './Chart'
 import { Map } from './Map'
 import { Card}  from './Card'
 import { TextField } from './TextField'
-export {
+import { Icon } from './Icon'
+
+export { 
     Button,
     Table,
     ChartTemplate,
     Map,
     Card,
     TextField,
+    Icon,
 }

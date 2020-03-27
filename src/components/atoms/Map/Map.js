@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components'
 
+import logo from 'assets/images/smtm.png'
+
 // Redux
 import { connect } from 'react-redux';
 import { actions as mapActions } from 'ducks/Map';
@@ -8,11 +10,9 @@ import { actions as mapActions } from 'ducks/Map';
 declare var kakao:any;
 
 const CustomMap = styled.div`
-    width: 1280px;
-    height: 720px;
-    border: 0px dotted;
-    border-radius: 15px;
-    margin: 40px 0px 0px 0px;
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
     z-index: 0;
 `
 
@@ -33,12 +33,12 @@ function Map(props){
             road_code: data.road_code,
         }))
          
-        var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-        var imageSize = new kakao.maps.Size(24, 35);
+        var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png"; 
+        var imageSize = new kakao.maps.Size(35, 35);
           
         // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
-    
+        
         var kakaoMap = new kakao.maps.Map(el, {
             center: new kakao.maps.LatLng(37.563642596447494, 127.0260017409586),
         });

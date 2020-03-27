@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 
 const Container = styled.input`
+    width: 200px;
+    height: 30px;
+
     outline: none;
     color: black;
     background: white;

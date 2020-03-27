@@ -1,11 +1,23 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { Map } from 'components/atoms'
-import { TradeDataArea, MenuArea } from 'components/organisms'
+import * as Tag from 'components/atoms'
+import * as HighTag from 'components/molecules'
+import * as Item from 'components/organisms'
 
 
-const Layout = styled.div`
+const boxFade = keyframes`
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+`
+
+
+const Container = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
@@ -16,18 +28,43 @@ const Layout = styled.div`
     padding: 0px 0px 0px 0px;
 `
 
-const Item = styled.div`
-    display: flex;
-    margin: 0px 0px 10px 0px;
+const ContainerNav = styled.div`
+    width : 100%;
+    height : 50px;
+    background: white;
+    z-index: 1;
 `
+const ContainerContents = styled.div`
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin: 10px 0 0 0;
+    z-index: 1;
+`
+
+
+
+
 
 function Template() {
     return(
-        <Layout>
-            <MenuArea/>
+        <Container>
+            <Map/>
+            <ContainerNav>
+                <Item.Nav />
+            </ContainerNav>
+            <ContainerContents>
+                <Item.AnalyMenu />
+                <Item.TradeDataArea/>
+                <Item.ControlButton />
+            </ContainerContents>
+
+            
+            {/*<Item.SettingNav />
+             <MenuArea/>
             <Item><Map/></Item>
-            <Item><TradeDataArea/></Item>
-        </Layout>
+            <Item><Item.TradeDataArea/></Item> */}
+        </Container>
     )
 }
 
