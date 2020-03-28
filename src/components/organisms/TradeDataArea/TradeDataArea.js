@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { CardTradeTable, BarChart, LineChart, PieChart } from 'components/molecules'
+import { CardTradeTable } from 'components/molecules'
 
 const Container = styled.div`
     display: flex;

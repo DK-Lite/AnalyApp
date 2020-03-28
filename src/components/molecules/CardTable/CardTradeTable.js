@@ -22,15 +22,6 @@ const StyledCard = styled.div`
     padding: 5px 5px 5px 5px;
 `
 
-const Title = styled.h3`
-    display: flex;
-    flex: 1;
-    height: 20px;
-    box-shadow: 0px 0px 0px 0px gray;
-    margin: 5px 5px 5px 5px;
-    font-family: Nanum Gothic;
-`
-
 const Contents = styled.div`
     display: flex;
     height: 430px;

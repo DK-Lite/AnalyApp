@@ -16,7 +16,7 @@ const Container = styled.div`
 function SettingNav({icons, ...other}){
     return (
         <Container>
-            {icons.map( x => <HighTag.IconButton name={x} />)}
+            {icons.map( (x,i) => <HighTag.IconButton key={i} name={x} />)}
         </Container>
     )
 }

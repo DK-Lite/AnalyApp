@@ -9,7 +9,7 @@ const Container = styled.div`
 function Icon({name, ...other}){
     return (
         <Container>
-               <i class="material-icons"> {name} </i>    
+               <i className="material-icons"> {name} </i>    
         </Container>
     )
 }

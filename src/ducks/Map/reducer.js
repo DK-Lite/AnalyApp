@@ -6,8 +6,9 @@ const init = {
 }
 
 function reducer(state=init, action){
-    switch(action.type){
 
+    switch(action.type){
+        
         case types.SET_APT_INFOS:
             return {
                 ...state,

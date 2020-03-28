@@ -5,6 +5,7 @@ import { AnalyArea } from './AnalyArea'
 import { Nav } from './Nav'
 import { AnalyMenu } from './AnalyMenu'
 import { ControlButton } from './ControlButton'
+
 export {
     TradeDataArea,
     MenuArea,

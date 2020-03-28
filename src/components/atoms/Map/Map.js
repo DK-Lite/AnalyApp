@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components'
 
-import logo from 'assets/images/smtm.png'
-
 // Redux
 import { connect } from 'react-redux';
 import { actions as mapActions } from 'ducks/Map';
@@ -16,6 +14,20 @@ const CustomMap = styled.div`
     z-index: 0;
 `
 
+// const el = document.getElementById('map');
+// var kakaoMap = new kakao.maps.Map(el, {
+//     center: new kakao.maps.LatLng(37.563642596447494, 127.0260017409586),
+// });
+
+
+// export const setCenter= () => {            
+//     // 이동할 위도 경도 위치를 생성합니다 
+//     var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+//     // 지도 중심을 이동 시킵니다
+//     kakaoMap.setCenter(moveLatLon);
+// }
+
+
 function Map(props){
     const { apartInfos } = props
     const { loadAptInfos, updateAptName } = props // actions
@@ -24,6 +36,7 @@ function Map(props){
     useEffect(CreateMap,[apartInfos])
 
     function CreateMap(){
+
         const el = document.getElementById('map');
         
         const positions = apartInfos.map( data => ({ 
@@ -65,17 +78,14 @@ function Map(props){
             })(marker, uniqueKey);
         }
     }
-
-
+    
     return (
-            <CustomMap className='Map' id="map" />
+        <CustomMap className='Map' id="map" />
     )
 
 }
-
 
 export default connect(
     state => state.map,
     mapActions
 )(Map);
-//export default Map;
