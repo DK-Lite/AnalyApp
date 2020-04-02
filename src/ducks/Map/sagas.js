@@ -7,7 +7,7 @@ import { instance } from 'utils/api'
 
 function* updateAptSaga(action){
     try{
-        const { data } = yield call(instance.post, "http://34.84.195.184:3691/data-warehouse/apt-unique-info/apt-info", action.payload)
+        const { data } = yield call(instance.post, "/api/data-warehouse/apt-unique-info/apt-info", action.payload)
         
         yield put(analyActions.updateTradeTable(data.info))
 
@@ -21,7 +21,7 @@ function* updateAptSaga(action){
 
 function* loadAptInfo(){
     try{
-        const { data } = yield call(instance.get, "http://34.84.195.184:3691/data-warehouse/apt-unique-info")
+        const { data } = yield call(instance.get, "/api/data-warehouse/apt-unique-info")
         yield put(mapActions.setAptInfos(data.info))
     } catch (e){
         console.error(e);
