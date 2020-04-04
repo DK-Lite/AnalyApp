@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import * as HighTag from 'components/molecules'
 import * as Item from 'components/organisms'
 
-import * as Apis from 'components/atoms/Map/Map'
 // const boxFade = keyframes`
 //   from {
 //     width: 0%;

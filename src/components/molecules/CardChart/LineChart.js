@@ -37,6 +37,22 @@ const Contents = styled.div`
 `
 
 
+
+// {
+//     date: "2019-11"
+//     data = [
+//         {
+//             area: "86.3m",
+//             data: 82500,
+//         },
+//         {
+//             area: "59.3m",
+//             data: 52310,
+//         },
+//     ]
+// }
+
+
 function CardChart(props) {
 
     const { width, height, ...other } = props;

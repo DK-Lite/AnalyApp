@@ -40,10 +40,10 @@ function Map(props){
         const el = document.getElementById('map');
         
         const positions = apartInfos.map( data => ({ 
-            title: data.apt_name,
+            title: data.aptName,
             latlng: new kakao.maps.LatLng(data.latitudes, data.longitude),
-            road_city_code: data.road_city_code,
-            road_code: data.road_code,
+            roadCityCode: data.roadCityCode,
+            roadCode: data.roadCode,
         }))
          
         var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png"; 
@@ -62,12 +62,12 @@ function Map(props){
                 position: positions[i].latlng,
                 title : positions[i].title,
                 image : markerImage,  
-                content: positions[i].road_city_code, 
+                content: positions[i].roadCityCode, 
     
             });
             var uniqueKey = ({
-                road_city_code: positions[i].road_city_code,
-                road_code : positions[i].road_code,
+                road_city_code: positions[i].roadCityCode,
+                road_code : positions[i].roadCode,
             });
 
             // marker click event

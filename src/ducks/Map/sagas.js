@@ -14,7 +14,7 @@ function* updateAptSaga(action){
         //const data = yield call(instance.post, "host:port", action.payload)
         //yield put(templateActions.success)
     } catch (e){
-        console.error(e);
+        //console.error(e);
         //yield put(templateActions.fail)
     }
 }
