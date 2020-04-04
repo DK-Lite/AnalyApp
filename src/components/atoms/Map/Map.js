@@ -66,8 +66,8 @@ function Map(props){
     
             });
             var uniqueKey = ({
-                road_city_code: positions[i].roadCityCode,
-                road_code : positions[i].roadCode,
+                roadCityCode: positions[i].roadCityCode,
+                roadCode : positions[i].roadCode,
             });
 
             // marker click event

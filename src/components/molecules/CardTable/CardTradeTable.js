@@ -43,14 +43,14 @@ function CardTradeTable(props) {
 
     let dataName = "";
     if (tradeTableData.length > 0){
-        dataName = tradeTableData[0].apt_name;
+        dataName = tradeTableData[0].aptName;
     }
 
     const dataLists = tradeTableData.map( x => 
         ({
-            ymd: x.trade_year+"-"+pad(x.trade_month, 2)+"-"+pad(x.trade_day, 2),
-            value: x.trade_value,
-            area: x.dedicated_area,
+            ymd: x.tradeYear+"-"+pad(x.tradeMonth, 2)+"-"+pad(x.tradeDay, 2),
+            value: x.tradeValue,
+            area: x.dedicatedArea,
         }))
 
 
