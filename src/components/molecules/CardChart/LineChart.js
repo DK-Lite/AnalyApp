@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'; //Redux Main
+
 import { ChartTemplate } from 'components/atoms'
 
 
@@ -52,11 +54,11 @@ const Contents = styled.div`
 //     ]
 // }
 
-
 function CardChart(props) {
 
-    const { width, height, ...other } = props;
+    const { width, height, tradeMeanChartData, ...other } = props;
 
+    
     return(
         <StyledCard
             style= {{
@@ -70,6 +72,7 @@ function CardChart(props) {
             <Contents>
                 <ChartTemplate
                     type='line'
+                    // data={tradeMeanChartData}
                     data={{
                         labels: ["2019-11", "2019-12", "2020-01"],
                         datasets: [
@@ -120,5 +123,9 @@ function CardChart(props) {
     )
 
 };
-
-export default CardChart;
+export default connect(
+	// state => ({	
+	// 	data: selectors.getTradeTable(state),
+    // }), 
+    state => state.analyzer,
+)(CardChart)

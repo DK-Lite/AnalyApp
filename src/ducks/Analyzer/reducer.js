@@ -18,7 +18,6 @@ function reducer(state=init, action){
                 ...state,
                 tradeMeanChartData: action.payload,
             }
-            
         default:
             return { ...state }
     }

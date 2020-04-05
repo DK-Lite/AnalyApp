@@ -30,6 +30,7 @@ const Title = styled.h3`
     margin: 5px 5px 5px 5px;
     font-family: Nanum Gothic;
 `
+//Samsung Sans,roboto,sans-serif
 
 const Contents = styled.div`
     display: flex;

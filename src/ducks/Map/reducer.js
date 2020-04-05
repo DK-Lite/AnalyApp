@@ -22,7 +22,6 @@ function reducer(state=init, action){
             }
         default:
             return { ...state }
-            
     }
 }
 

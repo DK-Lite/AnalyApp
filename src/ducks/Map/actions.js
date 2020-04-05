@@ -1,8 +1,13 @@
 import * as types from './types'
 
-export const updateAptName = (data) => ({
+export const updateApt = (data) => ({
     type: types.UPDATE_APT,
     payload: data,  
+})
+
+export const updateAptChart = (data) => ({
+    type: types.UPDATE_APT_CHART,
+    payload: data,
 })
 
 export const loadAptInfos = (data) => ({

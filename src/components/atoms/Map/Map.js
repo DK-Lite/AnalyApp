@@ -30,7 +30,7 @@ const CustomMap = styled.div`
 
 function Map(props){
     const { apartInfos } = props
-    const { loadAptInfos, updateAptName } = props // actions
+    const { loadAptInfos, updateApt, updateAptChart } = props // actions
     
     useEffect(loadAptInfos,[])
     useEffect(CreateMap,[apartInfos])
@@ -44,6 +44,7 @@ function Map(props){
             latlng: new kakao.maps.LatLng(data.latitudes, data.longitude),
             roadCityCode: data.roadCityCode,
             roadCode: data.roadCode,
+            aptName: data.aptName,
         }))
          
         var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png"; 
@@ -68,12 +69,14 @@ function Map(props){
             var uniqueKey = ({
                 roadCityCode: positions[i].roadCityCode,
                 roadCode : positions[i].roadCode,
+                aptName : positions[i].aptName,
             });
 
             // marker click event
             (function(marker, uniqueKey) {
                 kakao.maps.event.addListener(marker, 'click', function() {
-                    updateAptName(uniqueKey)
+                    updateApt(uniqueKey)
+                    updateAptChart(uniqueKey)
                 });
             })(marker, uniqueKey);
         }
