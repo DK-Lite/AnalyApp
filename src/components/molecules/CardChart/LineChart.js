@@ -54,11 +54,47 @@ const Contents = styled.div`
 //     ]
 // }
 
+function parse(str) {
+    var y = str.substr(0, 4);
+    var m = str.substr(4, 2);
+    return new Date(y,m-1);
+}
+var scatterChartData = {
+    datasets: [{
+      label: "My First dataset",
+      data: [
+        {
+            x: "201907",
+            y: 4
+        }, 
+        {
+            x: "201906",
+            y: 6
+        }, 
+        {
+            x: "201905",
+            y: 8
+        }, 
+        {
+            x: "201909",
+            y: 9
+        }, 
+        {
+            x: "201910",
+            y: 10
+        }, 
+        {
+            x: "201911",
+            y: 5
+        }]
+    }]
+  };
+
+
 function CardChart(props) {
 
-    const { width, height, tradeMeanChartData, ...other } = props;
+    const { width, height, ...other } = props;
 
-    
     return(
         <StyledCard
             style= {{
@@ -71,51 +107,38 @@ function CardChart(props) {
             datalist.meanPrices*/}
             <Contents>
                 <ChartTemplate
-                    type='line'
-                    // data={tradeMeanChartData}
-                    data={{
-                        labels: ["2019-11", "2019-12", "2020-01"],
-                        datasets: [
-                        {
-                            label: "86.3m",
-                            data: [82500, 90000, 100000],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                            ],
-                            borderWidth: 3
-                        },
-
-                        {
-                            label: "59.3m",
-                            data: [52310, 60000, 70002],
-                            backgroundColor: [
-                                'rgba(54, 162, 235, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(54, 162, 235, 1)',
-                            ],
-                            borderWidth: 3
-                        },
-
-                        {
-                            label: "30.3m",
-                            data: [32520, 43323, 60323],
-                            backgroundColor: [
-                                'rgba(255, 255, 86, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(255, 206, 86, 1)',
-                            ],
-                            borderWidth: 3
-                        },
-                    ]
-                    }}
+                    type='scatter'
                     style={
                         { width:'380px', height:'100%'}
                     }
+                    options= {{
+                        scales: {
+                          xAxes: [{
+                            position: 'bottom',
+                            ticks: {
+                                callback: function(value, index, values) {
+
+                                    return value
+                                    let str = String(value)
+                                    console.log(str)
+                                    return str.substring(0,4) + "-" + str.substring(4,6);
+                                },
+                            },
+                            scaleLabel: {
+                              display: true,
+                              labelString: 'Day'
+                            }
+                          }],
+
+                          yAxes: [{
+                            position: 'left',
+                            scaleLabel: {
+                              display: true,
+                              labelString: 'y axis'
+                            }
+                          }]
+                        }
+                    }}
                 ></ChartTemplate>
             </Contents>
             

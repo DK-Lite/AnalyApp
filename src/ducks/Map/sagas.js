@@ -8,7 +8,6 @@ import { instance } from 'utils/api'
 function* updateAptSaga(action){
     try{
         const { data } = yield call(instance.post, "/api/data-warehouse/apt-unique-info/apt-info", action.payload)
-        console.log(data.info)
         yield put(analyActions.updateTradeTable(data.info))
         //const data = yield call(instance.post, "host:port", action.payload)
         //yield put(templateActions.success)
@@ -48,7 +47,9 @@ function* updateAptSaga(action){
 // data.info.map( x => (
 //     output.labels.appand(x._id.day)
 //     output.datasets.appand(x._id.day)
-
+// data.info.sort(function(a, b) {
+//  
+//});
 
 // ))
 
@@ -56,9 +57,6 @@ function* updateAptSaga(action){
 function* updateAptChartSaga(action){
     try{
         const { data } = yield call(instance.post, "/api/data-mart/apt-trade-month-avg/apt-info", action.payload)
-        console.log(data.info)
-
-
 
         yield put(analyActions.updateTradeMeanChart(data.info))
 

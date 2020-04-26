@@ -4,7 +4,6 @@ const init = {
     tradeTableData : [],
     tradeMeanChartData : [],
 }
-
 function reducer(state=init, action){
     switch(action.type){
         case types.UPDATE_TRADE_TABLE:
