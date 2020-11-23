@@ -6,6 +6,8 @@ import { Card}  from './Card'
 import { TextField } from './TextField'
 import { Icon } from './Icon'
 
+export { default as HighChart} from 'components/atoms/Chart/HighChart'
+
 export { 
     Button,
     Table,

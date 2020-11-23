@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'; //Redux Main
 
-import { ChartTemplate } from 'components/atoms'
+import { HighChart } from 'components/atoms'
 
 
 
@@ -106,40 +106,42 @@ function CardChart(props) {
             {/*  datalist.labels
             datalist.meanPrices*/}
             <Contents>
-                <ChartTemplate
+                {/* <ChartTemplate
                     type='scatter'
                     style={
-                        { width:'380px', height:'100%'}
+                        { width: '380px', height: '100%' }
                     }
-                    options= {{
+                    options={{
                         scales: {
-                          xAxes: [{
-                            position: 'bottom',
-                            ticks: {
-                                callback: function(value, index, values) {
+                            xAxes: [{
+                                position: 'bottom',
+                                ticks: {
+                                    callback: function (value, index, values) {
 
-                                    return value
-                                    let str = String(value)
-                                    console.log(str)
-                                    return str.substring(0,4) + "-" + str.substring(4,6);
+                                        return value
+                                        let str = String(value)
+                                        console.log(str)
+                                        return str.substring(0, 4) + "-" + str.substring(4, 6);
+                                    },
                                 },
-                            },
-                            scaleLabel: {
-                              display: true,
-                              labelString: 'Day'
-                            }
-                          }],
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Day'
+                                }
+                            }],
 
-                          yAxes: [{
-                            position: 'left',
-                            scaleLabel: {
-                              display: true,
-                              labelString: 'y axis'
-                            }
-                          }]
+                            yAxes: [{
+                                position: 'left',
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'y axis'
+                                }
+                            }]
                         }
                     }}
-                ></ChartTemplate>
+                ></ChartTemplate> */}
+
+                <HighChart></HighChart>
             </Contents>
             
         </StyledCard>
